@@ -1,9 +1,16 @@
 package com.qf.videos.mapper;
 
 import com.qf.videos.pojo.Admin;
-import org.springframework.stereotype.Repository;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-@Repository
-public interface AdminMapper {
-    Admin selectAdminByUsernameAndPassword(Admin admin);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface AdminMapper extends BaseMapper<Admin> {
+
 }

@@ -1,16 +1,16 @@
 package com.qf.videos.mapper;
 
 import com.qf.videos.pojo.User;
-import org.springframework.stereotype.Repository;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-@Repository
-public interface UserMapper {
-    User selectUserByEmailAndPassword(User user);
-
-    User selectUserByEmail(String email);
-
-    Boolean insertUser(User user);
-
-    Boolean updateUser(User user);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface UserMapper extends BaseMapper<User> {
 
 }

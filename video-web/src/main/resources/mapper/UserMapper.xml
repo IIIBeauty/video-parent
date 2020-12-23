@@ -1,41 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qf.videos.mapper.UserMapper">
-    <select id="selectUserByEmailAndPassword" parameterType="com.qf.videos.pojo.User" resultType="com.qf.videos.pojo.User">
-        select * from user
-        where
-        email = #{email}
-        and
-        password = #{password}
-    </select>
 
-    <select id="selectUserByEmail" parameterType="String" resultType="com.qf.videos.pojo.User">
-        select * from user
-        where
-        email = #{email}
-    </select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qf.videos.pojo.User">
+        <id column="id" property="id" />
+        <result column="email" property="email" />
+        <result column="phoneNum" property="phoneNum" />
+        <result column="password" property="password" />
+        <result column="code" property="code" />
+        <result column="nickName" property="nickName" />
+        <result column="sex" property="sex" />
+        <result column="birthday" property="birthday" />
+        <result column="address" property="address" />
+        <result column="imgUrl" property="imgUrl" />
+        <result column="createTime" property="createTime" />
+    </resultMap>
 
-    <insert id="insertUser" parameterType="com.qf.videos.pojo.User">
-        insert into user (email,password,createTime)
-        values (#{email},#{password},#{createTime})
-    </insert>
-
-    <update id="updateUser" parameterType="com.qf.videos.pojo.User">
-        UPDATE user SET
-        email = #{email},
-        phoneNum = #{phoneNum},
-        password = #{password},
-        code = #{code},
-        nickName = #{nickName},
-        sex = #{sex},
-        birthday = #{birthday},
-        address = #{address},
-        imgUrl = #{imgUrl},
-        createTime = #{createTime}
-        WHERE
-        id = #{id};
-    </update>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, email, phoneNum, password, code, nickName, sex, birthday, address, imgUrl, createTime
+    </sql>
 
 </mapper>

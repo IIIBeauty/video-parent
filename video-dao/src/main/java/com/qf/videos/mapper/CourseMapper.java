@@ -1,13 +1,16 @@
 package com.qf.videos.mapper;
 
 import com.qf.videos.pojo.Course;
-import org.springframework.stereotype.Repository;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import java.util.List;
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface CourseMapper extends BaseMapper<Course> {
 
-@Repository
-public interface CourseMapper {
-    Course selectCourseById(String id);
-
-    List<Course> selectAll();
 }

@@ -1,11 +1,16 @@
 package com.qf.videos.service;
 
 import com.qf.videos.pojo.Course;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.util.List;
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface CourseService extends IService<Course> {
 
-public interface CourseService {
-    Course selectCourseById(String id);
-
-    List<Course> selectAll();
 }

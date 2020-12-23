@@ -1,44 +1,29 @@
 package com.qf.videos.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
-import java.util.List;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+/**
+ * <p>
+ * 学科表，存储各个学科的名字
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class Subject implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
+
     private String subjectName;
 
-    private List<Course> courseList;
 
-    @Override
-    public String toString() {
-        return "Subject{" +
-                "id=" + id +
-                ", subjectName='" + subjectName + '\'' +
-                ", courseList=" + courseList +
-                '}';
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getSubjectName() {
-        return subjectName;
-    }
-
-    public void setSubjectName(String subjectName) {
-        this.subjectName = subjectName;
-    }
-
-    public List<Course> getCourseList() {
-        return courseList;
-    }
-
-    public void setCourseList(List<Course> courseList) {
-        this.courseList = courseList;
-    }
 }

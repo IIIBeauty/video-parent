@@ -1,7 +1,16 @@
 package com.qf.videos.service;
 
 import com.qf.videos.pojo.Admin;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface AdminService {
-    Admin selectAdminByUsernameAndPassword(Admin admin);
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface AdminService extends IService<Admin> {
+
 }

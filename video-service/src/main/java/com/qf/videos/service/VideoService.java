@@ -1,15 +1,16 @@
 package com.qf.videos.service;
 
-import com.qf.videos.pojo.QueryVo;
 import com.qf.videos.pojo.Video;
-import com.qf.videos.utils.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-public interface VideoService {
-    Video selectVideoById(String id);
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface VideoService extends IService<Video> {
 
-    Boolean updateVideo(Video video);
-
-    Page<Video> selectVideoByQueryVo(QueryVo queryVo);
-
-    Boolean deleteById(String[] ids);
 }

@@ -1,11 +1,16 @@
 package com.qf.videos.service;
 
 import com.qf.videos.pojo.Subject;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.util.List;
+/**
+ * <p>
+ * 学科表，存储各个学科的名字 服务类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface SubjectService extends IService<Subject> {
 
-public interface SubjectService {
-    List<Subject> selectAll();
-
-    Subject selectSubjectById(String id);
 }

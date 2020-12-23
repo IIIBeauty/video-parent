@@ -1,19 +1,16 @@
 package com.qf.videos.service;
 
-import com.qf.videos.pojo.QueryVo;
 import com.qf.videos.pojo.Speaker;
-import com.qf.videos.utils.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.util.List;
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
+public interface SpeakerService extends IService<Speaker> {
 
-public interface SpeakerService {
-    List<Speaker> selectAll();
-
-    Page<Speaker> selectSpeakerByQueryVo(QueryVo queryVo);
-
-    Boolean deleteById(String id);
-
-    Speaker selectSpeakerById(String id);
-
-    Boolean saveOrUpdate(Speaker speaker);
 }

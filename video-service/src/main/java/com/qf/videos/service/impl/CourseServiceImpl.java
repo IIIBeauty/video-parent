@@ -1,26 +1,20 @@
 package com.qf.videos.service.impl;
 
-import com.qf.videos.mapper.CourseMapper;
 import com.qf.videos.pojo.Course;
+import com.qf.videos.mapper.CourseMapper;
 import com.qf.videos.service.CourseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
 @Service
-public class CourseServiceImpl implements CourseService {
-    @Autowired
-    private CourseMapper courseMapper;
+public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> implements CourseService {
 
-
-    @Override
-    public Course selectCourseById(String id) {
-        return courseMapper.selectCourseById(id);
-    }
-
-    @Override
-    public List<Course> selectAll() {
-        return courseMapper.selectAll();
-    }
 }

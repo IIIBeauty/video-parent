@@ -1,25 +1,20 @@
 package com.qf.videos.service.impl;
 
-import com.qf.videos.mapper.SubjectMapper;
 import com.qf.videos.pojo.Subject;
+import com.qf.videos.mapper.SubjectMapper;
 import com.qf.videos.service.SubjectService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+/**
+ * <p>
+ * 学科表，存储各个学科的名字 服务实现类
+ * </p>
+ *
+ * @author l
+ * @since 2020-12-23
+ */
 @Service
-public class SubjectServiceImpl implements SubjectService {
-    @Autowired
-    private SubjectMapper subjectMapper;
+public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> implements SubjectService {
 
-    @Override
-    public List<Subject> selectAll() {
-        return subjectMapper.selectAll();
-    }
-
-    @Override
-    public Subject selectSubjectById(String id) {
-        return subjectMapper.selectSubjectById(id);
-    }
 }
