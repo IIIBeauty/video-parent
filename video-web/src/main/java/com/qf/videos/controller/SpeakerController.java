@@ -35,6 +35,26 @@ public class SpeakerController {
         return speakerService.findAll();
     }
 
+    @RequestMapping("/findById")
+    public void findById(Integer id){
+        speakerService.findById(id);
+    }
+
+    @RequestMapping("/insertSpeaker")
+    public void insertSpeaker(Speaker speaker){
+        speakerService.insertSpeaker(speaker);
+    }
+
+    @RequestMapping("/deleteSpeakerById")
+    public void deleteSpeakerById(Integer id){
+        speakerService.deleteSpeakerById(id);
+    }
+
+    @RequestMapping("/updateSpeakerById")
+    public void updateSpeakerById(Speaker speaker){
+        speakerService.updateSpeakerById(speaker);
+    }
+
     @RequestMapping("/findByPage")
     public PageInfo findByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                @RequestParam(defaultValue = "5") Integer pageSize){

@@ -27,4 +27,25 @@ public class SpeakerServiceImpl extends ServiceImpl<SpeakerMapper, Speaker> impl
     public List<Speaker> findAll() {
         return speakerMapper.selectList(null);
     }
+
+    @Override
+    public void insertSpeaker(Speaker speaker) {
+        speakerMapper.insert(speaker);
+    }
+
+    @Override
+    public void deleteSpeakerById(Integer id) {
+        speakerMapper.deleteById(id);
+    }
+
+    @Override
+    public void updateSpeakerById(Speaker speaker) {
+        speakerMapper.updateById(speaker);
+    }
+
+    @Override
+    public void findById(Integer id) {
+        speakerMapper.selectById(id);
+    }
+
 }

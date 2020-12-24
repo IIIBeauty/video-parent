@@ -16,4 +16,12 @@ import java.util.List;
 public interface SpeakerService extends IService<Speaker> {
 
     List<Speaker> findAll();
+
+    void insertSpeaker(Speaker speaker);
+
+    void deleteSpeakerById(Integer id);
+
+    void updateSpeakerById(Speaker speaker);
+
+    void findById(Integer id);
 }

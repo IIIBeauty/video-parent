@@ -16,10 +16,14 @@
         <association property="speaker" javaType="com.qf.videos.pojo.Speaker">
             <id column="sid" property="id"/>
             <result column="speaker_name" property="speakerName"/>
+            <result column="speaker_desc" property="speakerDesc"/>
+            <result column="speaker_job" property="speakerJob"/>
+            <result column="head_img_url" property="headImgUrl"/>
         </association>
         <association property="course" javaType="com.qf.videos.pojo.Course">
             <id column="cid" property="id"/>
             <result column="course_title" property="courseTitle"/>
+            <result column="course_desc" property="courseDesc"/>
         </association>
     </resultMap>
 
