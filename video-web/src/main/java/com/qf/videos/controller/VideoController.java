@@ -37,8 +37,8 @@ public class VideoController {
                                @RequestParam(defaultValue = "5") Integer pageSize){
 
         PageHelper.startPage(pageNum,pageSize);
-        List<Video> accounts = videoService.findAll();
-        PageInfo pageInfo = new PageInfo(accounts);
+        List<Video> Videos = videoService.findAll();
+        PageInfo<Video> pageInfo = new PageInfo<>(Videos);
         return pageInfo;
     }
 

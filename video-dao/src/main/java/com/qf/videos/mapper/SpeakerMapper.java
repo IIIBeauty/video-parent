@@ -2,6 +2,7 @@ package com.qf.videos.mapper;
 
 import com.qf.videos.pojo.Speaker;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author l
  * @since 2020-12-23
  */
+@Repository
 public interface SpeakerMapper extends BaseMapper<Speaker> {
 
 }

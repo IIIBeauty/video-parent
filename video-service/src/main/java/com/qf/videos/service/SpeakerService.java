@@ -3,6 +3,8 @@ package com.qf.videos.service;
 import com.qf.videos.pojo.Speaker;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface SpeakerService extends IService<Speaker> {
 
+    List<Speaker> findAll();
 }
