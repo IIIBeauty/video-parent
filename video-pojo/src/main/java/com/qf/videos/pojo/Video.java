@@ -63,5 +63,7 @@ public class Video implements Serializable {
      */
     private Integer playNum;
 
+    private Speaker speaker;
+    private Course course;
 
 }

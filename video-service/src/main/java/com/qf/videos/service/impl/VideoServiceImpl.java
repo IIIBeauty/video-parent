@@ -25,6 +25,6 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
 
     @Override
     public List<Video> findAll() {
-        return videoMapper.selectList(null);
+        return videoMapper.findAll();
     }
 }
