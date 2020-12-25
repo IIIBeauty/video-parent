@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,6 +26,31 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
 
     @Override
     public List<Video> findAll() {
-        return videoMapper.selectList(null);
+        return videoMapper.findAll();
+    }
+
+    @Override
+    public Video findById(String id) {
+        return videoMapper.findById(id);
+    }
+
+    @Override
+    public void insertVideo(Video video) {
+        videoMapper.insert(video);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        videoMapper.deleteById(id);
+    }
+
+    @Override
+    public void deleteByIds(String[] ids) {
+        videoMapper.deleteBatchIds(Arrays.asList(ids));
+    }
+
+    @Override
+    public void updateVideo(Video video) {
+        videoMapper.updateById(video);
     }
 }

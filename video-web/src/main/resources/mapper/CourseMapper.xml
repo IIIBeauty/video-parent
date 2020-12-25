@@ -4,15 +4,40 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.qf.videos.pojo.Course">
-        <id column="id" property="id" />
-        <result column="course_title" property="courseTitle" />
-        <result column="course_desc" property="courseDesc" />
-        <result column="subject_id" property="subjectId" />
+        <id column="cid" property="id"/>
+        <result column="course_title" property="courseTitle"/>
+        <result column="course_desc" property="courseDesc"/>
+        <result column="subject_id" property="subjectId"/>
+        <association property="subject" javaType="com.qf.videos.pojo.Subject">
+            <id column="sid" property="id"></id>
+            <result column="subject_name" property="subjectName"></result>
+        </association>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id, course_title, course_desc, subject_id
     </sql>
+
+    <select id="findAll" parameterType="com.qf.videos.pojo.Course" resultMap="BaseResultMap">
+        select course.id as cid,
+        course.course_title,
+        course.course_desc,
+        course.subject_id,
+        subject.subject_name
+        from course
+        inner join subject on subject.id = course.subject_id
+    </select>
+
+    <select id="findById" parameterType="string" resultMap="BaseResultMap">
+        select course.id as cid,
+        course.course_title,
+        course.course_desc,
+        course.subject_id,
+        subject.subject_name
+        from course
+        inner join subject on subject.id = course.subject_id
+        where course.id = #{id}
+    </select>
 
 </mapper>

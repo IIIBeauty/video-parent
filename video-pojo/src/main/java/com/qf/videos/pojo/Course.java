@@ -29,5 +29,6 @@ public class Course implements Serializable {
 
     private Integer subjectId;
 
+    private Subject subject;
 
 }

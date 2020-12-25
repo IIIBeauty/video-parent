@@ -16,4 +16,14 @@ import java.util.List;
 public interface VideoService extends IService<Video> {
 
     List<Video> findAll();
+
+    Video findById(String id);
+
+    void insertVideo(Video video);
+
+    void deleteById(String id);
+
+    void deleteByIds(String[] ids);
+
+    void updateVideo(Video video);
 }
