@@ -38,6 +38,7 @@ public class VideoController {
 
         PageHelper.startPage(pageNum,pageSize);
 
+
         List<Video> videos = videoService.findAll();
 
         PageInfo<Video> pageInfo = new PageInfo<>(videos);

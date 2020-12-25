@@ -64,6 +64,10 @@ public class Video implements Serializable {
     private Integer playNum;
 
     private Speaker speaker;
+<<<<<<< HEAD
+=======
+    private Course course;
+>>>>>>> origin/master
 
     private Course course;
 }

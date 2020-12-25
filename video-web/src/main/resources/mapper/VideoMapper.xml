@@ -4,6 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.qf.videos.pojo.Video">
+<<<<<<< HEAD
         <id column="id" property="id"/>
         <result column="title" property="title"/>
         <result column="detail" property="detail"/>
@@ -13,6 +14,17 @@
         <result column="video_url" property="videoUrl"/>
         <result column="image_url" property="imageUrl"/>
         <result column="play_num" property="playNum"/>
+=======
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="detail" property="detail" />
+        <result column="time" property="time" />
+        <result column="speaker_id" property="speakerId" />
+        <result column="course_id" property="courseId" />
+        <result column="video_url" property="videoUrl" />
+        <result column="image_url" property="imageUrl" />
+        <result column="play_num" property="playNum" />
+>>>>>>> origin/master
         <association property="speaker" javaType="com.qf.videos.pojo.Speaker">
             <id column="sid" property="id"/>
             <result column="speaker_name" property="speakerName"/>
@@ -32,20 +44,28 @@
         id, title, detail, time, speaker_id, course_id, video_url, image_url, play_num
     </sql>
 
+<<<<<<< HEAD
     <select id="findAll" resultMap="BaseResultMap">
+=======
+    <select id="findAll" parameterType="string" resultMap="BaseResultMap">
+>>>>>>> origin/master
         select video.id,
         video.title,
         video.time,
         video.video_url,
         video.image_url,
+<<<<<<< HEAD
         video.speaker_id,
         video.course_id,
+=======
+>>>>>>> origin/master
         speaker.speaker_name,
         video.play_num,
         course.course_title,
         video.detail
         from video
         inner join speaker on speaker.id = video.speaker_id
+<<<<<<< HEAD
         inner join course on course.id = video.course_id
     </select>
 
@@ -70,6 +90,9 @@
         inner join speaker on speaker.id = video.speaker_id
         inner join course on course.id = video.course_id
         where video.id = #{id}
+=======
+        inner join course on course.id = video.speaker_id
+>>>>>>> origin/master
     </select>
 
 

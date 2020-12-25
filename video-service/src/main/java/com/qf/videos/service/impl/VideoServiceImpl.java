@@ -27,6 +27,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
     @Override
     public List<Video> findAll() {
         return videoMapper.findAll();
+
     }
 
     @Override
@@ -52,5 +53,6 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video> implements
     @Override
     public void updateVideo(Video video) {
         videoMapper.updateById(video);
+
     }
 }

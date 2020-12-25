@@ -23,4 +23,7 @@ public interface VideoMapper extends BaseMapper<Video> {
     void deleteById(String id);
 
     void insertVideo(Video video);
+
+
+
 }
